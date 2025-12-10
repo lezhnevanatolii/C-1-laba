@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+std::string makeDecision(int x, int y) {
+    if (x > y) {
+        return std::to_string(x) + " >" + std::to_string(y);
+    }
+    else if (x < y) {
+        return std::to_string(x) + "< " + std::to_string(y);
+    }
+    else { // x == y
+        return std::to_string(x) + "==" + std::to_string(y);
+    }
+}
+
+int main() {
+    int x, y;
+
+    std::cout << "Введите два числа (x y): ";
+    std::cin >> x >> y;
+
+    std::string result = makeDecision(x, y);
+    std::cout << "Результат: \"" << result << "\"" << std::endl;
+
+    return 0;
+}

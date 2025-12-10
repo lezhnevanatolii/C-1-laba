@@ -1,0 +1,44 @@
+#include <iostream>
+
+bool equalNum(int x) {
+    if (x < 0) {
+        x = -x;
+    }
+    
+    if (x < 10) {
+        return true;
+    }
+    
+    int lastDigit = x % 10;
+    x = x / 10;
+    
+    while (x > 0) {
+        int currentDigit = x % 10;
+        if (currentDigit != lastDigit) {
+            return false;
+        }
+        x = x / 10;
+    }
+    
+    return true;
+}
+
+int main() {
+    int number;
+    std::cout << "Введите число: ";
+    std::cin >> number;
+    
+    if (std::cin.fail()) {
+        std::cout << "Ошибка ввода!" << std::endl;
+        return 1;
+    }
+    
+    bool result = equalNum(number);
+    if (result) {
+        std::cout << "Все цифры одинаковы" << std::endl;
+    } else {
+        std::cout << "Цифры не все одинаковы" << std::endl;
+    }
+    
+    return 0;
+}

@@ -1,0 +1,37 @@
+#include <iostream>
+
+int findLast(int arr[], int size, int x) {
+    int lastIndex = -1;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == x) {
+            lastIndex = i;
+        }
+    }
+    return lastIndex;
+}
+
+int main() {
+    int n;
+    std::cout << "Введите размер массива: ";
+    std::cin >> n;
+    
+    if (std::cin.fail() || n <= 0) {
+        std::cout << "Ошибка ввода!" << std::endl;
+        return 1;
+    }
+    
+    int arr[100];
+    std::cout << "Введите элементы массива: ";
+    for (int i = 0; i < n; i++) {
+        std::cin >> arr[i];
+    }
+    
+    int x;
+    std::cout << "Введите число для поиска: ";
+    std::cin >> x;
+    
+    int result = findLast(arr, n, x);
+    std::cout << "Индекс последнего вхождения: " << result << std::endl;
+    
+    return 0;
+}

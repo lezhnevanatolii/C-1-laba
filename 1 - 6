@@ -1,0 +1,21 @@
+#include <iostream>
+
+
+bool isUpperCase(char x) {
+    return x >= 'A' && x <= 'Z';
+}
+
+int main() {
+    char x;
+
+    std::cout << "Введите символ: ";
+    std::cin >> x;
+
+    if (isUpperCase(x)) {
+        std::cout << "Результат: true" << std::endl;
+    } else {
+        std::cout << "Результат: false" << std::endl;
+    }
+
+    return 0;
+}

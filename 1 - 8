@@ -1,0 +1,20 @@
+#include <iostream>
+
+bool isDivisor(int a, int b) {
+    return (a != 0 && b % a == 0) || (b != 0 && a % b == 0);
+}
+
+int main() {
+    int a, b;
+
+    std::cout << "Введите два числа: ";
+    std::cin >> a >> b;
+
+    if (isDivisor(a, b)) {
+        std::cout << "Результат: true" << std::endl;
+    } else {
+        std::cout << "Результат: false" << std::endl;
+    }
+
+    return 0;
+}

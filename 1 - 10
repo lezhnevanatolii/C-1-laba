@@ -1,0 +1,35 @@
+#include <iostream>
+
+
+int LastNumSum(int a, int b) {
+  int lastDigitA = a % 10;
+  int lastDigitB = b % 10;
+  return lastDigitA + lastDigitB;
+}
+
+int main() {
+  int result = 0;
+  int number = 0;
+
+  std::cout << "Введите 5 чисел для последовательного сложения по правилу lastNumSum:\n";
+
+  
+  std::cout << "Число 1: ";
+  std::cin >> result;
+
+  
+  for (int i = 2; i <= 5; ++i) {
+    std::cout << "Число " << i << ": ";
+    std::cin >> number;
+
+    int sum = LastNumSum(result, number);
+
+    std::cout << result << " + " << number << " это " << sum << std::endl;
+
+    result = sum;  
+  }
+
+  std::cout << "Итого " << result << std::endl;
+
+  return 0;
+}

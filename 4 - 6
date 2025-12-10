@@ -1,0 +1,42 @@
+#include <iostream>
+
+void reverse(int arr[], int size) {
+    for (int i = 0; i < size / 2; i++) {
+        int temp = arr[i];
+        arr[i] = arr[size - 1 - i];
+        arr[size - 1 - i] = temp;
+    }
+}
+
+int main() {
+    int n;
+    std::cout << "Введите размер массива: ";
+    std::cin >> n;
+    
+    if (std::cin.fail() || n <= 0) {
+        std::cout << "Ошибка ввода!" << std::endl;
+        return 1;
+    }
+    
+    int arr[100];
+    std::cout << "Введите элементы массива: ";
+    for (int i = 0; i < n; i++) {
+        std::cin >> arr[i];
+    }
+    
+    std::cout << "Исходный массив: ";
+    for (int i = 0; i < n; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    reverse(arr, n);
+    
+    std::cout << "Перевернутый массив: ";
+    for (int i = 0; i < n; i++) {
+        std::cout << arr[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    return 0;
+}

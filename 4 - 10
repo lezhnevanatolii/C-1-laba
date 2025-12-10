@@ -1,0 +1,52 @@
+#include <iostream>
+
+int* deleteNegative(int arr[], int size, int& newSize) {
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] >= 0) {
+            count++;
+        }
+    }
+    
+    newSize = count;
+    int* newArr = new int[count];
+    int index = 0;
+    
+    for (int i = 0; i < size; i++) {
+        if (arr[i] >= 0) {
+            newArr[index] = arr[i];
+            index++;
+        }
+    }
+    
+    return newArr;
+}
+
+int main() {
+    int n;
+    std::cout << "Введите размер массива: ";
+    std::cin >> n;
+    
+    if (std::cin.fail() || n <= 0) {
+        std::cout << "Ошибка ввода!" << std::endl;
+        return 1;
+    }
+    
+    int arr[100];
+    std::cout << "Введите элементы массива: ";
+    for (int i = 0; i < n; i++) {
+        std::cin >> arr[i];
+    }
+    
+    int newSize;
+    int* newArr = deleteNegative(arr, n, newSize);
+    
+    std::cout << "Массив без отрицательных чисел: ";
+    for (int i = 0; i < newSize; i++) {
+        std::cout << newArr[i] << " ";
+    }
+    std::cout << std::endl;
+    
+    delete[] newArr;
+    return 0;
+}

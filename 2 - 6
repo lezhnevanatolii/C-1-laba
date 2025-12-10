@@ -1,0 +1,20 @@
+#include <iostream>
+
+bool sum3(int x, int y, int z) {
+    return (x + y == z) || (x + z == y) || (y + z == x);
+}
+
+int main() {
+    int x, y, z;
+
+    std::cout << "Введите три числа: ";
+    std::cin >> x >> y >> z;
+
+    if (sum3(x, y, z)) {
+        std::cout << "Результат: true" << std::endl;
+    } else {
+        std::cout << "Результат: false" << std::endl;
+    }
+
+    return 0;
+}

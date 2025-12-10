@@ -1,0 +1,35 @@
+#include <iostream>
+
+int sumLastNums(int x) {
+    if (x < 0) {
+        x = -x;
+    }
+    
+    int last = x % 10;
+    
+    int secondLast = (x / 10) % 10;
+    
+
+    return last + secondLast;
+}
+
+int main() {
+    int number;
+    
+    std::cout << "Введите число (не менее двух знаков): ";
+    std::cin >> number;
+    
+   
+    if (std::cin.fail()) {
+        std::cout << "Ошибка ввода!" << std::endl;
+        return 1;
+    }
+    
+    
+    int result = sumLastNums(number);
+    std::cout << "Сумма двух последних знаков числа " << number 
+              << " равна: " << result << std::endl;
+    
+
+    return 0;
+}

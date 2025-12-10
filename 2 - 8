@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+std::string age(int x) {
+    int lastDigit = x % 10;
+    int lastTwoDigits = x % 100;
+
+    if (lastDigit == 1 && lastTwoDigits != 11) {
+        return std::to_string(x) + " год";
+    } else if ((lastDigit >= 2 && lastDigit <= 4) && !(lastTwoDigits >= 12 && lastTwoDigits <= 14)) {
+        return std::to_string(x) + " года";
+    } else {
+        return std::to_string(x) + " лет";
+    }
+}
+
+int main() {
+    int x;
+    std::cout << "Введите возраст: ";
+    std::cin >> x;
+
+    std::string result = age(x);
+    std::cout << result << std::endl;
+
+    return 0;
+}

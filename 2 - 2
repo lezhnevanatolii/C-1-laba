@@ -1,0 +1,21 @@
+#include <iostream>
+
+double safeDiv(int x, int y) {
+    if (y == 0) {
+        return 0;
+    } else {
+        return static_cast<double>(x) / y;
+    }
+}
+
+int main() {
+    int x, y;
+
+    std::cout << "Введите два числа (x y): ";
+    std::cin >> x >> y;
+
+    double result = safeDiv(x, y);
+    std::cout << "Результат деления: " << result << std::endl;
+
+    return 0;
+}

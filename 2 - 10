@@ -1,0 +1,38 @@
+#include <iostream>
+
+void printDays(int x) {
+    switch(x) {
+        case 1:
+            std::cout << "понедельник" << std::endl;
+        case 2:
+            std::cout << "вторник" << std::endl;
+        case 3:
+            std::cout << "среда" << std::endl;
+        case 4:
+            std::cout << "четверг" << std::endl;
+        case 5:
+            std::cout << "пятница" << std::endl;
+        case 6:
+            std::cout << "суббота" << std::endl;
+        case 7:
+            std::cout << "воскресенье" << std::endl;
+            break;
+        default:
+            std::cout << "это не день недели" << std::endl;
+    }
+}
+
+int main() {
+    int day;
+    std::cout << "Введите номер дня недели (1-7): ";
+    std::cin >> day;
+    
+    if (std::cin.fail()) {
+        std::cout << "Ошибка ввода!" << std::endl;
+        return 1;
+    }
+    
+    printDays(day);
+    
+    return 0;
+}

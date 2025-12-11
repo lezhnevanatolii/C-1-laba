@@ -1,20 +1,20 @@
 #include <iostream>
 
-
-int sumLastNums(int x) {
-    int lastDigit = x % 10;             
-    int secondLastDigit = (x / 10) % 10; 
-    return lastDigit + secondLastDigit;
+bool isPositive(int x) {
+    return x > 0;
 }
 
 int main() {
     int x;
-
-    std::cout << "Введите число (минимум из двух цифр): ";
+    
+    std::cout << "Введите число: ";
     std::cin >> x;
-
-    int result = sumLastNums(x);
-    std::cout << "Результат: " << result << std::endl;
-
+    
+    if (isPositive(x)) {
+        std::cout << "x=" << x << "\nрезультат: true" << std::endl;
+    } else {
+        std::cout << "x=" << x << "\nрезультат: false" << std::endl;
+    }
+    
     return 0;
 }
